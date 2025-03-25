@@ -16,13 +16,13 @@
         <div class="flex justify-end gap-2 mt-3">
           <ng-container *ngIf="selectedEventIndex !== null && events[selectedEventIndex]">
             <p-button 
-              *ngIf="events[selectedEventIndex].status.includes('Evening') || events[selectedEventIndex].status.includes('Full Day')" 
+              *ngIf="events[selectedEventIndex].status.includes('Evening') || events[selectedEventIndex].status.includes('full day')" 
               label="Change to Morning" 
               (click)="confirmChange('Morning')" 
               class="p-button-primary mr-10" 
             />
             <p-button 
-              *ngIf="events[selectedEventIndex].status.includes('Morning') || events[selectedEventIndex].status.includes('Full Day')" 
+              *ngIf="events[selectedEventIndex].status.includes('Morning') || events[selectedEventIndex].status.includes('full day')" 
               label="Change to Evening" 
               (click)="confirmChange('Evening')" 
               class="p-button-primary mr-10" 

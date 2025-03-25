@@ -26,6 +26,7 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit() {
     this.fetchLogs();
+
   }
 
   fetchLogs() {
@@ -59,7 +60,7 @@ export class TimelineComponent implements OnInit {
         alert(`Cook has already been logged for ${timeLabel} today!`);
       }
     } else {
-      const status = `Cook did not check-in on ${this.datePipe.transform(formattedDate, 'dd/MM/yyyy')} in ${timeLabel}`;
+      const status = `Cook did not check-in on ${this.datePipe.transform(formattedDate, 'MM/dd/yyyy')} in ${timeLabel}`;
 
       this.http.post<{ _id: string }>(this.apiUrl, { status, date: formattedDate }).subscribe(response => {
         this.fetchLogs();
